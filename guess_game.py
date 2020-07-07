@@ -6,9 +6,7 @@ print("Hello and Welcome to Number Guessing Game")
 print("$" * 41)
 
 sleep(1)
-
 print("-" * 41)
-
 sleep(1)
 
 print('''
@@ -24,9 +22,7 @@ print('''
 ''')
 
 sleep(1)
-
 g.start()
-
 msg = 'Sorry! take a guess again'
 
 
@@ -53,6 +49,7 @@ try:
                     g.guess_count += 1
                     if guess == g.intermediate():
                         print(f'Congrats! you win with count of : {g.guess_count}')
+                        g.result = 'true'
                         break
 
                     elif guess != g.intermediate():
@@ -63,7 +60,7 @@ try:
                     g.guess_count += 1
                     if guess == g.hard():
                         print(f'Congrats! you win with count of : {g.guess_count}')
-                        g.result = 'true'
+                        g.result = "true"
                         break
 
                     elif guess != g.hard():
