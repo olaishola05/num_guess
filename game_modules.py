@@ -15,24 +15,22 @@ def easy():
 
 def intermediate():
     odd = []
-    for num in range(1, 50):
+    for num in range(1, 20):
         if num % 2 != 0:
             odd.append(num)
-
     odd_gen = r.choice(odd)
     return odd_gen
 
 
 def hard():
     prime = []
-    for num in range(10, 40, + 1):
+    for num in range(1, 20, + 1):
         if num > 1:
             for x in range(2, num):
                 if num % x == 0:
                     break
                 else:
                     prime.append(num)
-
     prime_gen = r.choice(prime)
 
     return prime_gen
@@ -40,9 +38,16 @@ def hard():
 
 def start():
     new_guess = input(''' Ready to start? \n Please enter Y for YES and N for No:  ''')
-    if new_guess.upper() == 'Y':
-        print('''
-        Fasting your seat belt and Game begins now....
-        ''')
+    if new_guess in ('n', 'y'):
+        if new_guess.upper() == 'Y':
+            print('''
+              Game begins now....
+                ''')
+
+        else:
+            print('Thanks for stopping by. Exiting.......')
+
     else:
-        print('Thanks for stopping by.')
+        print('Value entered is invalid, want to try again?')
+        start()
+
